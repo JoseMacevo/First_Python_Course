@@ -23,10 +23,10 @@ class PostExtractor:
         posts = []
 
         for card in doc_final.select(".card"):
-            titulo = card.select(".card-title span")[1].text
-            emoticono = card.select_one(".emoji").text
-            contenido = card.select_one(".card-text").text
-            imagen = urljoin(urlbase, card.select_one("img").attrs["src"])
+            title = card.select(".card-title span")[1].text
+            emoticone = card.select_one(".emoji").text
+            content = card.select_one(".card-text").text
+            image = urljoin(urlbase, card.select_one("img").attrs["src"])
 
             crawled = PostCrawled(title, emoticone, content, image)
             posts.append(crawled)
